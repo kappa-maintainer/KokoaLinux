@@ -1,16 +1,15 @@
 package cn.yesterday17.kokoalinux;
 
-import cn.yesterday17.kokoalinux.config.ConfigManager;
+
 import cn.yesterday17.kokoalinux.gui.GuiChange;
 import com.google.common.eventbus.EventBus;
-import com.google.common.eventbus.Subscribe;
+import cpw.mods.fml.common.DummyModContainer;
+import cpw.mods.fml.common.LoadController;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.ModMetadata;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.DummyModContainer;
-import net.minecraftforge.fml.common.LoadController;
-import net.minecraftforge.fml.common.ModMetadata;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import org.apache.logging.log4j.Logger;
+
 
 public class KokoaLinux extends DummyModContainer {
     public static final String MOD_ID = "kokoalinux";
@@ -20,7 +19,7 @@ public class KokoaLinux extends DummyModContainer {
         super(new ModMetadata());
 
         ModMetadata metadata = getMetadata();
-        metadata.modId = MOD_ID;
+        metadata.modId = MOD_ID + "Container";
         metadata.name = NAME;
         metadata.version = "@VERSION@";
         metadata.description = "IME solution for Minecraft under Linux.";
@@ -29,27 +28,19 @@ public class KokoaLinux extends DummyModContainer {
         metadata.credits = "Axeryok";
     }
 
-    @Override
-    public String getGuiClassName() {
-        return "cn.yesterday17.kokoalinux.config.GuiFactory";
-    }
+
 
     @Override
     public boolean registerBus(EventBus bus, LoadController controller) {
         bus.register(this);
         return true;
     }
-
-    @Subscribe
-    public void preInit(FMLPreInitializationEvent event) {
-        // Inject Config
-        ConfigManager.inject();
-    }
-
-    @Subscribe
-    public void init(FMLInitializationEvent event) {
+    @Mod.EventHandler
+    public void init(FMLPreInitializationEvent event) {
+        System.out.println("!!!!!!!!!!!!!!!!!Kokoa loading!!!!!!!!!!!!!!!!!!!!");
         // Subscribe events
-        MinecraftForge.EVENT_BUS.register(GuiChange.class);
-        MinecraftForge.EVENT_BUS.register(ConfigManager.class);
+        MinecraftForge.EVENT_BUS.register(new GuiChange());
     }
+
+
 }

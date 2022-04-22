@@ -1,7 +1,7 @@
 package cn.yesterday17.kokoalinux.input;
 
 import cn.yesterday17.kokoalinux.KokoaGlobal;
-import cn.yesterday17.kokoalinux.config.KokoaConfig;
+import cn.yesterday17.kokoalinux.KokoaLinux;
 
 public class InputHelper {
     // Used by org.lwjgl.opengl.LinuxDisplay.incDisplay
@@ -43,10 +43,14 @@ public class InputHelper {
     }
 
     public static void toggleIC(boolean active) {
+        System.out.println("IC STATE " + active);
+
         KokoaGlobal.xic = InputNative.instance.toggleIC(active ? 1 : 0);
     }
 
     public static void setDebug() {
-        InputNative.instance.setDebug(KokoaConfig.debug ? 1 : 0);
+        InputNative.instance.setDebug(1);
     }
+
+
 }

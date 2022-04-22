@@ -1,7 +1,7 @@
 package cn.yesterday17.kokoalinux.transformer;
 
 import net.minecraft.launchwrapper.IClassTransformer;
-import net.minecraftforge.fml.common.asm.transformers.deobf.FMLDeobfuscatingRemapper;
+import cpw.mods.fml.common.asm.transformers.deobf.FMLDeobfuscatingRemapper;
 import org.objectweb.asm.*;
 
 public class GuiTextFieldTransformer implements IClassTransformer {

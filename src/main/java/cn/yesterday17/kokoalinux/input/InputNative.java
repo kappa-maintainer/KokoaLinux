@@ -4,7 +4,7 @@ import com.sun.jna.Library;
 import com.sun.jna.Native;
 
 public interface InputNative extends Library {
-    InputNative instance = Native.loadLibrary("kokoa", InputNative.class);
+    InputNative instance = Native.load("kokoa", InputNative.class);
 
     /////////////////////////////////////
 

@@ -3,7 +3,7 @@ package cn.yesterday17.kokoalinux.tweaker;
 import cn.yesterday17.kokoalinux.transformer.LwjglTransformer;
 import net.minecraft.launchwrapper.ITweaker;
 import net.minecraft.launchwrapper.LaunchClassLoader;
-import net.minecraftforge.fml.relauncher.FMLInjectionData;
+import cpw.mods.fml.relauncher.FMLInjectionData;
 
 import java.io.File;
 import java.util.List;

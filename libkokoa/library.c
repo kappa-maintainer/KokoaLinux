@@ -13,14 +13,12 @@ typedef long Pointer;
 
 ///////////////////////////////// Debug //////////////////////////////////
 
-bool DEBUG = false;
+bool DEBUG = true;
 
 void setDebug(long debug) {
-    if (DEBUG != (debug == 0 ? false : true)) {
-        DEBUG = debug == 0 ? false : true;
         printf("[libkokoa/DEBUG] %sed debug mode\n", (DEBUG == true ? "enter" : "exit"));
         fflush(stdout);
-    }
+
 }
 
 ///////////////////////////////// Global /////////////////////////////////
@@ -74,6 +72,7 @@ Pointer createIC() {
             XNInputStyle,
             XIMPreeditNothing | XIMStatusNothing,
             NULL);
+    XUnsetICFocus(xic);
     if (DEBUG) {
         printf("[libkokoa/DEBUG] createIC: %p\n", xic);
         fflush(stdout);
