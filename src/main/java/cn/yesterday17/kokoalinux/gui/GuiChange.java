@@ -9,8 +9,7 @@ import net.minecraftforge.client.event.GuiOpenEvent;
 
 public class GuiChange {
     @SubscribeEvent
-    public static void didChangeGui(GuiOpenEvent event) {
-        System.out.println("Gui changing: " + event.gui);
+    public void didChangeGui(GuiOpenEvent event) {
         boolean canInput;
         if (event.gui == null) {
             // Ignore null GuiScreens

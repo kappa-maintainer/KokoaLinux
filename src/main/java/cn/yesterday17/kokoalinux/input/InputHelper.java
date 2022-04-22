@@ -43,7 +43,6 @@ public class InputHelper {
     }
 
     public static void toggleIC(boolean active) {
-        System.out.println("IC STATE " + active);
 
         KokoaGlobal.xic = InputNative.instance.toggleIC(active ? 1 : 0);
     }

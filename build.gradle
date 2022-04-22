@@ -482,10 +482,7 @@ def getManifestAttributes() {
                 "ForceLoadAsMod" : !containsMixinsAndOrCoreModOnly.toBoolean()
         ]
     }
-    manifestAttributes += [
-            "TweakClass" : "cn.yesterday17.kokoalinux.tweaker.KokoaTweaker",
-            "FMLCorePluginContainsFMLMod": true
-    ]
+
     return manifestAttributes
 }
 

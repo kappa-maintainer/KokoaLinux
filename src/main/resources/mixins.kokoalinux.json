@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.7.11",
+  "package": "cn.yesterday17.kokoalinux.mixin",
+  "plugin": "cn.yesterday17.kokoalinux.tweaker.KokoaLoadingPlugin",
+  "refmap": "mixins.kokoalinux.refmap.json",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [],
+  "client": [
+    "MixinGuiScreen"
+  ],
+  "server": []
+}

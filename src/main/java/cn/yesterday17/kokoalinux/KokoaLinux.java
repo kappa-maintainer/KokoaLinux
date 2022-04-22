@@ -10,7 +10,7 @@ import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.MinecraftForge;
 
-
+@Mod(modid = KokoaLinux.MOD_ID, name = KokoaLinux.NAME)
 public class KokoaLinux extends DummyModContainer {
     public static final String MOD_ID = "kokoalinux";
     public static final String NAME = "KokoaLinux";
@@ -37,7 +37,6 @@ public class KokoaLinux extends DummyModContainer {
     }
     @Mod.EventHandler
     public void init(FMLPreInitializationEvent event) {
-        System.out.println("!!!!!!!!!!!!!!!!!Kokoa loading!!!!!!!!!!!!!!!!!!!!");
         // Subscribe events
         MinecraftForge.EVENT_BUS.register(new GuiChange());
     }
