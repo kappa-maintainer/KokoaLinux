@@ -13,7 +13,7 @@ typedef long Pointer;
 
 ///////////////////////////////// Debug //////////////////////////////////
 
-bool DEBUG = true;
+bool DEBUG = false;
 
 void setDebug(long debug) {
         printf("[libkokoa/DEBUG] %sed debug mode\n", (DEBUG == true ? "enter" : "exit"));
