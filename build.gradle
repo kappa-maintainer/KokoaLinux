@@ -181,7 +181,7 @@ catch (Exception ignored) {
 
 // Pulls version first from the VERSION env and then git tag
 String identifiedVersion
-String versionOverride = "1.3.1"
+String versionOverride = "1.3.2"
 try {
     identifiedVersion = versionOverride == null ? gitVersion() : versionOverride
 }
