@@ -50,7 +50,7 @@ public class KokoaLinux extends DummyModContainer {
     @Subscribe
     public void init(FMLInitializationEvent event) {
         // Subscribe events
-        if(SystemUtils.IS_OS_UNIX || SystemUtils.IS_OS_FREE_BSD || SystemUtils.IS_OS_NET_BSD || SystemUtils.IS_OS_OPEN_BSD) {
+        if((SystemUtils.IS_OS_UNIX && !SystemUtils.IS_OS_MAC) || SystemUtils.IS_OS_FREE_BSD || SystemUtils.IS_OS_NET_BSD || SystemUtils.IS_OS_OPEN_BSD) {
             MinecraftForge.EVENT_BUS.register(GuiChange.class);
         }
         else {
